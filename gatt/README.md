@@ -13,10 +13,5 @@ print(batteryLevelCharacteristicId);
 print(const SigGattId(0x1234));
 
 // Construct a custom GATT ID:
-print(
-  const GattId(
-    leadingHexInt: 0x1234,
-    baseUuid: '-0000-1111-2222-3456789ABCDE',
-  ),
-);
+print(const GattId(0x1234, '-0000-1111-2222-3456789ABCDE'));
 ```
