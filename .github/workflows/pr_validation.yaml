@@ -6,7 +6,7 @@ jobs:
     defaults:
       run:
         # Run everything from within the super_editor project directory
-        working-directory: ./super_editor
+        working-directory: ./gatt
     steps:
       # Checkout the PR branch
       - uses: actions/checkout@v2
