@@ -1,6 +1,6 @@
 name: gatt
 description: GATT (Generic ATTribute profile) structured data for BLE communication.
-version: 1.0.0
+version: 0.0.1
 homepage: https://github.com/Flutter-Bounty-Hunters/ble/tree/main/gatt
 
 environment:

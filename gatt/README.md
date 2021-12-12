@@ -28,3 +28,14 @@ print(const GattId(0x1234, '-0000-1111-2222-3456789ABCDE').asUuid4Bytes);
 print(const GattId(0x1234, '-0000-1111-2222-3456789ABCDE').asUuid2Bytes);
 // prints "1234"
 ```
+
+## Contributing
+Please follow the standard [Flutter Bounty Hunter contribution guidelines](https://github.com/Flutter-Bounty-Hunters/policies/wiki/Contributing-Guide)
+
+## Learn more
+
+[Adafruit introduction to GATT](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt)
+
+[Bluetooth SIG assigned numbers](https://www.bluetooth.com/specifications/assigned-numbers/)
+
+[Bluetooth SIG UUIDs](https://btprodspecificationrefs.blob.core.windows.net/assigned-values/16-bit%20UUID%20Numbers%20Document.pdf)
