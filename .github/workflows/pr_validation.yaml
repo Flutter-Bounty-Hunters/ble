@@ -1,0 +1,22 @@
+name: Test gatt project PRs
+on: [pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        # Run everything from within the super_editor project directory
+        working-directory: ./super_editor
+    steps:
+      # Checkout the PR branch
+      - uses: actions/checkout@v2
+      # Setup Flutter environment
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: "stable"
+      # Download all the packages that the app uses
+      - run: flutter pub get
+      # Enforce static analysis here when we get to zero analysis warnings
+      - run: flutter analyze
+      # Run all tests
+      - run: flutter test
