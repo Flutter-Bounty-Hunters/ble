@@ -5,6 +5,16 @@ void main() {
   group("GattId", () {
     test("construction and equality", () {
       expect(
+        const GattId(0x1234, "-0000-1000-8000-00805F9B34FB").leadingHexInt,
+        0x1234,
+      );
+
+      expect(
+        const GattId(0x1234, "-0000-1000-8000-00805F9B34FB").baseUuid,
+        "-0000-1000-8000-00805F9B34FB",
+      );
+
+      expect(
         const GattId(0x1234, "-0000-1000-8000-00805F9B34FB"),
         const GattId(0x00001234, "-0000-1000-8000-00805F9B34FB"),
       );

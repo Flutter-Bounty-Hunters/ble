@@ -9,13 +9,20 @@
 class GattId {
   const GattId(
     this.leadingHexInt,
-    String baseUuid,
-  ) : _baseUuid = baseUuid;
+    this.baseUuid,
+  );
 
   /// The first 4 bytes of the full UUID for this GATT ID.
   final int leadingHexInt;
 
-  final String _baseUuid;
+  /// The trailing 28 bytes of the full UUID for this GATT ID.
+  ///
+  /// For SIG IDs, this value is always "-0000-1000-8000-00805F9B34FB".
+  ///
+  /// See also:
+  ///
+  ///  - `SigGattId`, which always uses the standard trailing SIG value.
+  final String baseUuid;
 
   /// The last 2 bytes of the leading 4 bytes of the UUID, expressed
   /// as a hex string.
@@ -40,7 +47,7 @@ class GattId {
   /// a hex string with UUID dashes.
   ///
   /// Example: 0000180F-0000-1000-8000-00805F9B34FB
-  String get asUuid => "$asUuid4Bytes$_baseUuid";
+  String get asUuid => "$asUuid4Bytes$baseUuid";
 
   @override
   String toString() => asUuid;
@@ -51,8 +58,8 @@ class GattId {
       other is GattId &&
           runtimeType == other.runtimeType &&
           leadingHexInt == other.leadingHexInt &&
-          _baseUuid == other._baseUuid;
+          baseUuid == other.baseUuid;
 
   @override
-  int get hashCode => leadingHexInt.hashCode ^ _baseUuid.hashCode;
+  int get hashCode => leadingHexInt.hashCode ^ baseUuid.hashCode;
 }
