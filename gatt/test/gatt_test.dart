@@ -5,36 +5,34 @@ void main() {
   group("GattId", () {
     test("construction and equality", () {
       expect(
-        const GattId(leadingHexInt: 0x1234, baseUuid: "-0000-1000-8000-00805F9B34FB"),
-        const GattId(leadingHexInt: 0x00001234, baseUuid: "-0000-1000-8000-00805F9B34FB"),
+        const GattId(0x1234, "-0000-1000-8000-00805F9B34FB"),
+        const GattId(0x00001234, "-0000-1000-8000-00805F9B34FB"),
       );
 
       expect(
-        const GattId(leadingHexInt: 0x1234, baseUuid: "-0000-1000-8000-00805F9B34FB") ==
-            const GattId(leadingHexInt: 0x1235, baseUuid: "-0000-1000-8000-00805F9B34FB"),
+        const GattId(0x1234, "-0000-1000-8000-00805F9B34FB") == const GattId(0x1235, "-0000-1000-8000-00805F9B34FB"),
         false,
       );
 
       expect(
-        const GattId(leadingHexInt: 0x1234, baseUuid: "-0000-1000-8000-00805F9B34FB") ==
-            const GattId(leadingHexInt: 0x1234, baseUuid: "-1000-1000-8000-00805F9B34FB"),
+        const GattId(0x1234, "-0000-1000-8000-00805F9B34FB") == const GattId(0x1234, "-1000-1000-8000-00805F9B34FB"),
         false,
       );
     });
 
     test("representations", () {
       expect(
-        const GattId(leadingHexInt: 0x1234, baseUuid: "-0000-1000-8000-00805F9B34FB").asUuid2Bytes,
+        const GattId(0x1234, "-0000-1000-8000-00805F9B34FB").asUuid2Bytes,
         "1234",
       );
 
       expect(
-        const GattId(leadingHexInt: 0x1234, baseUuid: "-0000-1000-8000-00805F9B34FB").asUuid4Bytes,
+        const GattId(0x1234, "-0000-1000-8000-00805F9B34FB").asUuid4Bytes,
         "00001234",
       );
 
       expect(
-        const GattId(leadingHexInt: 0x1234, baseUuid: "-0000-1000-8000-00805F9B34FB").asUuid,
+        const GattId(0x1234, "-0000-1000-8000-00805F9B34FB").asUuid,
         "00001234-0000-1000-8000-00805F9B34FB",
       );
     });

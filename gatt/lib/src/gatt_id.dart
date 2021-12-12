@@ -7,10 +7,10 @@
 /// `GattId` supports storage and access of the leading bytes and the
 /// trailing bytes, independently, to help facilitate BLE communication.
 class GattId {
-  const GattId({
-    required this.leadingHexInt,
-    required String baseUuid,
-  }) : _baseUuid = baseUuid;
+  const GattId(
+    this.leadingHexInt,
+    String baseUuid,
+  ) : _baseUuid = baseUuid;
 
   /// The first 4 bytes of the full UUID for this GATT ID.
   final int leadingHexInt;

@@ -8,9 +8,5 @@ const sigBaseUuid = "-0000-1000-8000-00805F9B34FB";
 /// For example, the SIG defines GATT IDs for various common characteristics
 /// such as battery level, current time, device name, heart rate, etc.
 class SigGattId extends GattId {
-  const SigGattId(int leadingHexInt)
-      : super(
-          leadingHexInt: leadingHexInt,
-          baseUuid: sigBaseUuid,
-        );
+  const SigGattId(int leadingHexInt) : super(leadingHexInt, sigBaseUuid);
 }

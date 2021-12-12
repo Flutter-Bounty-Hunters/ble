@@ -4,6 +4,8 @@ GATT (Generic ATTribute profile) is the information protocol at the heart of Blu
 Reference existing SIG GATT IDs, or define your own.
 
 ```dart
+import 'package:gatt/gatt.dart';
+
 // Reference official SIG IDs:
 print(batteryLevelCharacteristicId);
 
