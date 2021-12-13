@@ -1,6 +1,10 @@
 # GATT (Generic ATTribute profile)
 GATT (Generic ATTribute profile) is the information protocol at the heart of Bluetooth Low Energy communication. This package provides structured representations for GATT IDs, which identify services, characteristics, and descriptors. This package also includes many SIG GATT IDs for easy reference in your BLE code.
 
+<p>&nbsp;</p>
+<img src="https://flutterbountyhunters.com/brand/github-banner-inline.png">
+<p>&nbsp;</p>
+
 ## Usage
 Reference existing SIG GATT IDs, or define your own.
 
